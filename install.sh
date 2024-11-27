@@ -52,6 +52,22 @@ case "$answer" in
         ;;
 esac
 
+## add style import in swaync
+read -p "Do you want to install the dotsfiles needed for application themes to work? !!!THIS WILL OVERWRITE EXISTING CONFIGS!!! (You will not be able to use your own without modification)? (y/n): " answer
+case "$answer" in
+    [yY][eE][sS]|[yY]|[jJ])
+        cp -rf "$script_dir/assets/dots/"* "$HOME/Downloads/"
+        echo "done!"
+        ;;
+    [nN][oO]|[nN])
+        echo -e "\nSkipping.. please re-run this script if you change your mind!\n"
+        ;;
+    *)
+        echo -e "Invalid input. Please enter y or n.\n"
+        exit 0;
+        ;;
+esac
+
 
 ## Copy pywal templates
 read -p "The script will now copy the neccessary pywal-template files. Do you want to continue? (y/n): " answer
