@@ -39,11 +39,39 @@ case "$answer" in
         ;;
 esac
 
+s
+read -p "Do you want to copy hyprshade shaders and rofi themes for waybar features? (y/n): " answer
+case "$answer" in
+    [yY][eE][sS]|[yY]|[jJ])
+        if [[ -d "/usr/share/hyprshade/" ]]; then
+            cp -rf "$script_dir/assets/hyprshaders/"* "/usr/share/"
+        else
+            echo "[ERROR]: '/usr/share/hyprshade' doesnt exist. Please install hyprshade!"
+        fi
+        
+        if [[ -d "/usr/share/rofi/" ]]; then
+            cp -rf "$script_dir/assets/rofi-themes/"* "/usr/share/rofi/themes/"
+        else
+            echo "[ERROR]: '/usr/share/rofi' doesnt exist. Please install rofi!"
+        fi
+
+        echo "done!"
+        ;;
+    [nN][oO]|[nN])
+        echo -e "\nSkipping.. please re-run this script if you change your mind!\n"
+        ;;
+    *)
+        echo -e "Invalid input. Please enter y or n.\n"
+        exit 0;
+        ;;
+esac
+
+
 ## install dotfiles
 read -p "Do you want to install the dotsfiles needed for application themes to work? !!!THIS WILL OVERWRITE EXISTING CONFIGS!!! (You will not be able to use your own without modification)? (y/n): " answer
 case "$answer" in
     [yY][eE][sS]|[yY]|[jJ])
-        cp -rf "$script_dir/assets/dots/"* "$HOME/Downloads/"
+        cp -rf "$script_dir/assets/dots/"* "$HOME/.config/"
         echo "done!"
         ;;
     [nN][oO]|[nN])
