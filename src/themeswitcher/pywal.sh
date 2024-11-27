@@ -7,6 +7,7 @@ source ~/.cache/wal/colors.sh
 # define highlight colors
 hl="${color6:1}"
 hl2="${color4:1}"
+hl3="${color2:1}"
 hlt="ff0000"
 
 #### --------------------------------------------------------------------
