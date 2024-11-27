@@ -3,10 +3,21 @@
 #   exit 1
 #fi
 
+#
+# TODO:
+# [ ] Dotfiles contain paths including username
+# [ ] 
+#
+# DONE:
+# [x] rofi 
+# [x] waybar (except fonts)
+# [ ] swaync
+# [ ] gtk
+
+
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 ## Copy spicetify desktop file
-
 read -p "Do you want to use spicetify (This will create a spicetify desktop file)? (y/n): " answer
 case "$answer" in
     [yY][eE][sS]|[yY]|[jJ])
@@ -28,31 +39,7 @@ case "$answer" in
         ;;
 esac
 
-
-## Copy Rofi config
-read -p "The script will now set your Rofi theme. This will overwrite your 'config.rasi'. Do you want to continue? (y/n): " answer
-case "$answer" in
-    [yY][eE][sS]|[yY]|[jJ])
-        if [[ -e "$HOME/.config/rofi/config.rasi" ]]; then
-            echo "[INFO]: Copying config file to ~/.config/rofi/config.rasi"
-            mv "$HOME/.config/rofi/config.rasi" "$HOME/.config/rofi/config.rasi.backup"
-            cp "$script_dir/assets/config.rasi" "$HOME/.config/rofi/"
-            echo -e "-> success!\n"
-        else
-            echo "[ERROR]: '~/.config/rofi/config.rasi' doesnt exist. Please install rofi!"
-        fi
-
-        ;;
-    [nN][oO]|[nN])
-        echo -e "\nSkipping.. please re-run this script if you change your mind!\n"
-        ;;
-    *)
-        echo "Invalid input. Please enter y or n."
-        exit 0;
-        ;;
-esac
-
-## add style import in swaync
+## install dotfiles
 read -p "Do you want to install the dotsfiles needed for application themes to work? !!!THIS WILL OVERWRITE EXISTING CONFIGS!!! (You will not be able to use your own without modification)? (y/n): " answer
 case "$answer" in
     [yY][eE][sS]|[yY]|[jJ])
