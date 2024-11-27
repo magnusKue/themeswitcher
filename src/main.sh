@@ -28,6 +28,7 @@ source $script_dir/themeswitcher/hyprlock.sh
 source $script_dir/themeswitcher/nwg-menu.sh
 source $script_dir/themeswitcher/swaync.sh
 source $script_dir/themeswitcher/spicetify.sh
+source $script_dir/themeswitcher/discord.sh
 
 pywalfox update
 

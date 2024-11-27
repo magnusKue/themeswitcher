@@ -8,7 +8,7 @@ spicetify=true
 swaync=true
 nwg_menu=true
 gtk=true
-
+discord=true
 # SETTINGS
 notifications=false
 wallpaper_directory="$HOME/Bilder/wallpapers"
