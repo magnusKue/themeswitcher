@@ -44,13 +44,13 @@ read -p "Do you want to copy hyprshade shaders and rofi themes for waybar featur
 case "$answer" in
     [yY][eE][sS]|[yY]|[jJ])
         if [[ -d "/usr/share/hyprshade/" ]]; then
-            cp -rf "$script_dir/assets/hyprshaders/"* "/usr/share/"
+            sudo cp -rf "$script_dir/assets/hyprshaders/"* "/usr/share/"
         else
             echo "[ERROR]: '/usr/share/hyprshade' doesnt exist. Please install hyprshade!"
         fi
         
         if [[ -d "/usr/share/rofi/" ]]; then
-            cp -rf "$script_dir/assets/rofi-themes/"* "/usr/share/rofi/themes/"
+            sudo cp -rf "$script_dir/assets/rofi-themes/"* "/usr/share/rofi/themes/"
         else
             echo "[ERROR]: '/usr/share/rofi' doesnt exist. Please install rofi!"
         fi
