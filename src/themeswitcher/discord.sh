@@ -1,5 +1,5 @@
-if [ "$hyprlock" = "false" ]; then
-	echo "skipping hyprlock"
+if [ "$discord" = "false" ]; then
+	echo "skipping discord"
 	return 1;
 fi
 
