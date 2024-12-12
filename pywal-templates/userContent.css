@@ -1,0 +1,23 @@
+@-moz-document domain(chatgpt.com) {{
+    body {{
+      background-color: {background} !important; 
+      color: {color6} !important;
+
+      --main-surface-primary: {color9};
+      --main-surface-secondary: {color4};
+      --sidebar-surface-primary: {background};
+    }}
+}}
+
+
+@-moz-document domain(wikipedia.org) {{
+    body {{ 
+      background-color: #0E1F31 !important;
+    }}
+
+    .mw-body, .parsoid-body {{
+      background-color: #FF0000;
+    }}
+
+    /*id="composer-background"*/
+}}

@@ -9,6 +9,7 @@ swaync=true
 nwg_menu=true
 gtk=true
 discord=true
+css=true
 # SETTINGS
 notifications=true
 wallpaper_directory="$HOME/Pictures/wallpapers"
