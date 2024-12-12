@@ -1,23 +1,53 @@
 @-moz-document domain(chatgpt.com) {{
     body {{
       background-color: {background} !important; 
-      color: {color6} !important;
+      color: {background} !important; /*text*/
 
-      --main-surface-primary: {color9};
-      --main-surface-secondary: {color4};
-      --sidebar-surface-primary: {background};
+      --main-surface-primary: {color9}; /*top bar color*/
+      --main-surface-secondary: {color5}; /*text box bg color*/
+      --sidebar-surface-primary: {background}; /*sidebar bg color*/
+      --gray-750: {color4}; /*popup bg color*/
+      --gray-700: {color9}; /*selected element in popup*/
+      --sidebar-surface-secondary: {color9}; /*hovered chat*/
+      --sidebar-surface-tertiary: {color4}; /*selected chat*/
+      --text-quaternary: {background}; /*post arrow in input box*/
+      --text-error: {background}; /*delete chat and error texts*/
+      --message-surface: {color4};
     }}
 }}
 
-
-@-moz-document domain(wikipedia.org) {{
-    body {{ 
-      background-color: #0E1F31 !important;
+@-moz-document domain(google.com) {{
+    body {{
+	background-color: {background} !important;
+	color: {foreground}  !important; /*sidepanel more secondary texts*/
+	--XKMDxc: {color4}; /*share icon bg and sublink arrows*/
+	--gS5jXb: {color4}; /*lines between search result sublinks, line between language and references*/
+	--xhUGwc: {background}; /*background of search results, header*/
+	--JKqx2: {color4}; /*link color*/
+	--bbQxAb: {foreground}; /*text below link color*/
+	--YLNNHc: {foreground}; /*right sidebar title text, main dropdowns text and sublink arrow filling*/
+	--IXoxUe: {foreground}; /*google translate icon and secondary text colors*/
+	--COEmY: {foreground}; /*google translate secondary titles text and sidebar secondary text*/
     }}
 
-    .mw-body, .parsoid-body {{
-      background-color: #FF0000;
+    .VuuXrf {{ 
+	color: {color4} !important; /*name text above search res links*/
+    	
     }}
 
-    /*id="composer-background"*/
+    .lnXdpd {{ /*main page google logo*/
+        content: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Archlinux-logo-standard-version.png/800px-Archlinux-logo-standard-version.png') !important;
+    }}
+
+    #gb {{ /*google top bar on main page*/ 
+ 	background-color: {background} !important;   
+    }}
+
+    .logo {{ /*small google logo in top left above search results*/
+        content: url('https://avatars.githubusercontent.com/u/119706124?v=4') !important;
+	transform: scale(0.0);
+	transform-origin: top left;
+	border-radius: 50%;
+	overflow: hidden;
+    }}
 }}
